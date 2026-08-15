@@ -1,6 +1,12 @@
 import { pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
 import { ulid } from "ulid";
 
+export const BUSINESS = {
+  esim_provider: "esim_provider",
+  vpn_provider: "vpn_provider",
+  online_courses_trading: "online_courses_trading",
+} as const;
+
 export const cards = pgTable("cards", {
   id: varchar()
     .primaryKey()
