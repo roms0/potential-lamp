@@ -1,7 +1,7 @@
 import { pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
 import { ulid } from "ulid";
 
-export const cards = pgTable("executions", {
+export const executions = pgTable("executions", {
   id: varchar()
     .primaryKey()
     .notNull()
