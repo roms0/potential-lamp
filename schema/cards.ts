@@ -18,8 +18,6 @@ export const cards = pgTable("cards", {
     .notNull()
     .defaultNow(),
   title: varchar().notNull(),
-  title_norm: varchar().notNull(),
-  fingerprint: varchar().notNull(),
   business: varchar().notNull(),
   status: varchar().notNull(),
   /**
