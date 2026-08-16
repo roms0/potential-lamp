@@ -5,6 +5,8 @@ export const BUSINESS = {
   esim_provider: "esim_provider",
   vpn_provider: "vpn_provider",
   online_courses_trading: "online_courses_trading",
+  create_ai_video: "create_ai_video",
+  edit_photo: "edit_photo",
 } as const;
 
 export const cards = pgTable("cards", {
