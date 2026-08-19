@@ -7,7 +7,7 @@ import {
 } from "drizzle-orm/pg-core";
 import { ulid } from "ulid";
 
-type Payload = {
+export type CardPayload = {
   telegram: { value: string; description: string }[];
   websites: { value: string; description: string }[];
   description: string;
@@ -28,5 +28,5 @@ export const cards = pgTable("cards", {
   group: varchar().notNull(),
   business: varchar().notNull(),
   isClosed: boolean().notNull().default(false),
-  payload: jsonb().$type<Payload>(),
+  payload: jsonb().$type<CardPayload>(),
 });
