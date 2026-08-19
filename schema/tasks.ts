@@ -20,15 +20,15 @@ export const tasks = pgTable("tasks", {
     .$defaultFn(() => ulid()),
   label: varchar().notNull(),
   actor: varchar().notNull(),
+  business: varchar().notNull(),
   createdAt: timestamp({ withTimezone: true, precision: 0 })
     .notNull()
     .defaultNow(),
   scheduledAt: timestamp({ withTimezone: true, precision: 0 })
     .notNull()
     .defaultNow(),
-  startedAt: timestamp({ withTimezone: true, precision: 0 }).notNull(),
-  finishedAt: timestamp({ withTimezone: true, precision: 0 }).notNull(),
-  business: varchar().notNull(),
-  status: varchar().notNull(),
+  startedAt: timestamp({ withTimezone: true, precision: 0 }),
+  finishedAt: timestamp({ withTimezone: true, precision: 0 }),
+  status: varchar().notNull().default(TASK_STATUS.scheduled),
   error: varchar(),
 });
