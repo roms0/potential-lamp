@@ -25,8 +25,11 @@ export const cards = pgTable("cards", {
     .notNull()
     .defaultNow(),
   title: varchar().notNull(),
-  group: varchar().notNull(),
+  label: varchar().notNull(),
   business: varchar().notNull(),
   isClosed: boolean().notNull().default(false),
-  payload: jsonb().$type<CardPayload>(),
+  payload: jsonb()
+    .$type<CardPayload>()
+    .notNull()
+    .default({ description: "", telegram: [], websites: [] }),
 });
