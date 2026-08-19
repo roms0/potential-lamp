@@ -5,6 +5,7 @@ export const TASK_STATUS = {
   scheduled: "scheduled",
   done: "done",
   failed: "failed",
+  in_progress: "in_progress",
 } as const;
 
 export const TASK_ACTOR = {
