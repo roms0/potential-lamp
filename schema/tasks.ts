@@ -23,7 +23,9 @@ export const tasks = pgTable("tasks", {
   createdAt: timestamp({ withTimezone: true, precision: 0 })
     .notNull()
     .defaultNow(),
-  scheduledAt: timestamp({ withTimezone: true, precision: 0 }).notNull(),
+  scheduledAt: timestamp({ withTimezone: true, precision: 0 })
+    .notNull()
+    .defaultNow(),
   startedAt: timestamp({ withTimezone: true, precision: 0 }).notNull(),
   finishedAt: timestamp({ withTimezone: true, precision: 0 }).notNull(),
   business: varchar().notNull(),
