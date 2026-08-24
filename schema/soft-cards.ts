@@ -8,7 +8,7 @@ import {
 import { ulid } from "ulid";
 
 export type CardPayload = {
-  telegram: string | null;
+  telegram: string[];
   description: string | null;
 };
 
@@ -21,11 +21,11 @@ export const softCards = pgTable("soft_cards", {
   createdAt: timestamp({ withTimezone: true, precision: 0 })
     .notNull()
     .defaultNow(),
-  title: varchar().notNull(),
+  title: varchar().notNull().unique(),
   label: varchar().notNull(),
   isClosed: boolean().notNull().default(false),
   payload: jsonb()
     .$type<CardPayload>()
     .notNull()
-    .default({ description: null, telegram: null }),
+    .default({ description: null, telegram: [] }),
 });
