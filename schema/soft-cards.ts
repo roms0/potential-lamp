@@ -1,10 +1,4 @@
-import {
-  boolean,
-  jsonb,
-  pgTable,
-  timestamp,
-  varchar,
-} from "drizzle-orm/pg-core";
+import { jsonb, pgTable, timestamp, varchar } from "drizzle-orm/pg-core";
 import { ulid } from "ulid";
 
 export type CardPayload = {
@@ -23,7 +17,7 @@ export const softCards = pgTable("soft_cards", {
     .defaultNow(),
   title: varchar().notNull().unique(),
   label: varchar().notNull(),
-  isClosed: boolean().notNull().default(false),
+  batchName: varchar(),
   payload: jsonb()
     .$type<CardPayload>()
     .notNull()

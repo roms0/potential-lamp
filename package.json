@@ -8,7 +8,9 @@
     "drizzle-kit": "1.0.0-beta.23",
     "drizzle-orm": "1.0.0-beta.22",
     "pg": "8.20.0",
-    "postgres": "3.4.9"
+    "postgres": "3.4.9",
+    "@scaleway/random-name": "^6.0.2",
+    "bun-excel": "^1.2.1"
   },
   "peerDependencies": {
     "typescript": "^5",
